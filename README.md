@@ -1,6 +1,6 @@
 # Intro
 
-***sku-crawler*** is a demo boilerplate project written in go to scrape prices off HTML pages and send them to BigQuery. It is intended to run on [Cloud Run Jobs](https://cloud.google.com/run/docs/create-jobs "Cloud Run Jobs"), however can be used as a standalone too without any modifications
+***sku-crawler*** is a demo boilerplate project written in go to scrape prices off HTML pages and send them to BigQuery for further processing (not in the scope of this repo). It is intended to run on [Cloud Run Jobs](https://cloud.google.com/run/docs/create-jobs "Cloud Run Jobs"), however can be used as a standalone too without any modifications
 
 ## Installation
 
