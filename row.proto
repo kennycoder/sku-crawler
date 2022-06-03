@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package main;
+
+option go_package = ".;main";
+
+message Row {
+	string Name = 1;
+	double Price = 2;
+	string Source = 3;  
+    int64 timestamp = 4; // timestamp in bigquery
+}
