@@ -13,25 +13,32 @@
 | source | STRING | NULLABLE |
 | timestamp | TIMESTAMP | NULLABLE  |
 
-2) (optional) If you are planning on running this on [Cloud Run Jobs](http://https://cloud.google.com/run/docs/create-jobs "Cloud Run Jobs"), create a service account for the application that has the following permissions:
+2) Create a service account for the application that has the following permissions:
 
 ```
-roles/artifactregistry.writer
 roles/bigquery.dataEditor
+```
+
+*optional* If you are planning on running this on [Cloud Run Jobs](http://https://cloud.google.com/run/docs/create-jobs "Cloud Run Jobs"), add the following permissions:
+```
+roles/artifactregistry.writer
 roles/run.invoker
 ```
 
 
-3) To build, use docker
+3) To build, you need docker
 
 ```bash
-export GOOGLE_APPLICATION_CREDENTIALS="/path/to/gcp/credentials.json"
 docker build --tag crawler .
 ```
 
 ## Usage locally
 
+To run this locally you need to export the keys for the service account you created earlier.
+
 ```
+export GOOGLE_APPLICATION_CREDENTIALS="/path/to/gcp/credentials.json"
+
 docker run \
 -e PROJECT_ID='project' \
 -e BQ_DATASET='foo' \
